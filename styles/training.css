@@ -1,0 +1,8 @@
+/* Training Styles */
+#training h5 {
+  color: #fd7e14;
+}
+
+#training .card {
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+}
