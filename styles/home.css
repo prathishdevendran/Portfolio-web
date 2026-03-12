@@ -4,6 +4,62 @@
   color: white;
 }
 
+.hero-skills {
+  margin-top: 2rem;
+}
+
+.hero-skills h3 {
+  color: rgba(255,255,255,0.95);
+  font-weight: 600;
+}
+
+
+.hero-skill-card.c-lang {
+  background: linear-gradient(135deg, rgba(139,69,19,0.8), rgba(205,133,63,0.8)) !important;
+  border: 2px solid rgba(139,69,19,0.9) !important;
+}
+.hero-skill-card.cpp-lang {
+  background: linear-gradient(135deg, rgba(25,25,112,0.8), rgba(70,130,180,0.8)) !important;
+  border: 2px solid rgba(25,25,112,0.9) !important;
+}
+.hero-skill-card.python-lang {
+  background: linear-gradient(135deg, rgba(153,102,0,0.8), rgba(255,215,0,0.8)) !important;
+  border: 2px solid rgba(153,102,0,0.9) !important;
+}
+.hero-skill-card.java-lang {
+  background: linear-gradient(135deg, rgba(0,100,0,0.8), rgba(107,142,35,0.8)) !important;
+  border: 2px solid rgba(0,100,0,0.9) !important;
+}
+.hero-skill-card.html-lang {
+  background: linear-gradient(135deg, rgba(128,0,0,0.8), rgba(220,20,60,0.8)) !important;
+  border: 2px solid rgba(128,0,0,0.9) !important;
+}
+.hero-skill-card.css-lang {
+  background: linear-gradient(135deg, rgba(0,0,128,0.8), rgba(30,144,255,0.8)) !important;
+  border: 2px solid rgba(0,0,128,0.9) !important;
+}
+
+.hero-skill-card {
+  background: rgba(255,255,255,0.15) !important;
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255,255,255,0.3);
+  color: white;
+  transition: all 0.3s ease;
+  height: 120px;
+}
+
+
+
+.hero-skill-card:hover {
+  transform: translateY(-5px);
+}
+
+.hero-skill-card .card-title {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+
 .profile-pic {
   width: 250px;
   height: 250px;
