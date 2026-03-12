@@ -1,0 +1,9 @@
+/* Projects Styles */
+#projects h5 {
+  color: #17a2b8;
+}
+
+#projects .card-text {
+  font-size: 0.95rem;
+  line-height: 1.7;
+}

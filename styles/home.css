@@ -1,0 +1,26 @@
+/* Home Styles */
+#home {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.profile-pic {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  border: 5px solid rgba(255,255,255,0.3);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+}
+
+.contact-info li i {
+  color: #ffc107;
+  font-size: 1.4rem;
+}
+
+.contact-info li a {
+  color: white !important;
+}
+
+.contact-info li a:hover {
+  color: #ffc107 !important;
+}
