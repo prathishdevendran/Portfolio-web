@@ -1,5 +1,90 @@
-/* Certificates Styles */
-#certificates h6 {
-  color: #dc3545;
+/* Certificates Styles - Modern Design */
+#certificates {
+  background: white;
+  min-height: 100vh;
+  padding: 5rem 0;
+}
+
+#certificates .card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+  overflow: hidden;
+}
+
+#certificates .card:hover {
+  transform: translateY(-15px) scale(1.05);
+  box-shadow: 0 20px 40px rgba(31, 38, 135, 0.6);
+  background: rgba(255, 255, 255, 0.2);
+}
+
+#certificates .card-title {
+  background: linear-gradient(135deg, #ffd700, #ffed4e);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  text-shadow: none;
+}
+
+#certificates .fa-award {
+  
+  filter: drop-shadow(0 0 10px currentColor);
+  transition: all 0.3s ease;
+}
+
+#certificates .card:hover .fa-award {
+  transform: scale(1.2) rotate(10deg);
+}
+
+#certificates .btn-outline-primary {
+  border: 2px solid transparent;
+  background: linear-gradient(white, white) padding-box, linear-gradient(135deg, #667eea, #764ba2) border-box;
+  color: #667eea;
   font-weight: 600;
+  border-radius: 50px;
+  padding: 0.5rem 2rem;
+  transition: all 0.3s ease;
+}
+
+#certificates .btn-outline-primary:hover {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+}
+
+#certificates h2 {
+  background: linear-gradient(135deg, #ffd700, #ffed4e);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 800;
+  font-size: clamp(2rem, 5vw, 4rem);
+}
+
+@media (max-width: 768px) {
+  #certificates .card {
+    margin-bottom: 2rem;
+  }
+  
+  #certificates .card:hover {
+    transform: translateY(-5px) scale(1.02);
+  }
+}
+
+/* Pulse animation for icons */
+@keyframes pulse-glow {
+  0% { box-shadow: 0 0 5px rgba(255, 215, 0, 0.5); }
+  50% { box-shadow: 0 0 30px rgba(255, 215, 0, 0.8); }
+  100% { box-shadow: 0 0 5px rgba(255, 215, 0, 0.5); }
+}
+
+#certificates .card:hover .fa-award {
+  animation: pulse-glow 2s infinite;
 }
