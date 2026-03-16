@@ -1,9 +1,98 @@
 /* Projects Styles */
+#projects {
+  background: white;
+  min-height: 100vh;
+}
+
+#projects h2 {
+  color: #333;
+  font-weight: 700;
+  position: relative;
+}
+
+#projects h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(45deg, #17a2b8, #17a2b8);
+  border-radius: 2px;
+}
+
 #projects h5 {
+  color: #17a2b8;
+}
+
+#projects .card {
+  background: white;
+  border-radius: 50px;
+  overflow: hidden;
+  position: relative;
+  transition: all 0.4s ease;
+  border: none;
+}
+
+#projects .card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  z-index: 1;
+  background: linear-gradient(90deg, #17a2b8, #17a2b8);
+}
+
+#projects .card-body {
+  padding: 2rem;
+  z-index: 2;
+  position: relative;
+}
+
+#projects .card:hover {
+  transform: translateY(-12px) scale(1.02);
+  box-shadow: 0 25px 50px rgba(0,0,0,0.15) !important;
+}
+
+#projects .card-title:hover {
   color: #17a2b8;
 }
 
 #projects .card-text {
   font-size: 0.95rem;
   line-height: 1.7;
+  color: #666;
 }
+
+/* Tech Stack Badges */
+#projects .tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+#projects .tech-badge {
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  transition: all 0.3s;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+#projects .tech-badge:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.bg-python { background: linear-gradient(45deg, #3776ab, #ff8c00); color: white; }
+.bg-arima { background: linear-gradient(45deg, #8b5fbf, #6a1b9a); color: white; }
+.bg-plotly { background: linear-gradient(45deg, #1f77b4, #17becf); color: white; }
+.bg-matplotlib { background: linear-gradient(45deg, #d62728, #ff7f0e); color: white; }
+.bg-html { background: linear-gradient(45deg, #e34f26, #f06529); color: white; }
+.bg-css { background: linear-gradient(45deg, #264de4, #2965f1); color: white; }

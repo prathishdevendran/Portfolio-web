@@ -1,8 +1,97 @@
 /* Training Styles */
+#training {
+  background: white;
+  min-height: 100vh;
+}
+
+#training h2 {
+  color: #333;
+  font-weight: 700;
+  position: relative;
+}
+
+#training h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(45deg, #fd7e14, #ffc107);
+  border-radius: 2px;
+}
+
 #training h5 {
   color: #fd7e14;
 }
 
 #training .card {
-  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  background: white;
+  border-radius: 50px;
+  overflow: hidden;
+  position: relative;
+  transition: all 0.4s ease;
+  border: none;
 }
+
+#training .card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  z-index: 1;
+  background: linear-gradient(90deg, #fd7e14, #ffc107);
+}
+
+#training .card-body {
+  padding: 2rem;
+  z-index: 2;
+  position: relative;
+}
+
+#training .card:hover {
+  transform: translateY(-12px) scale(1.02);
+  box-shadow: 0 25px 50px rgba(0,0,0,0.15) !important;
+}
+
+#training .card-title:hover {
+  color: #ffc107;
+}
+
+#training .card-text {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: #666;
+}
+
+.tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.tech-badge {
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  transition: all 0.3s;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.tech-badge:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.bg-java { background: linear-gradient(45deg, #007396, #005f73); color: white; }
+.bg-dsa { background: linear-gradient(45deg, #fd7e14, #ffc107); color: white; }
+.bg-node { background: linear-gradient(45deg, #68a063, #5f9b58); color: white; }
+.bg-express { background: linear-gradient(45deg, #4f46e5, #3730a3); color: white; }
+.bg-ejs { background: linear-gradient(45deg, #f44, #e33); color: white; }
+
+

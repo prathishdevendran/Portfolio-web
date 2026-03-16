@@ -13,3 +13,53 @@
   font-size: 1rem;
   color: #666;
 }
+
+/* Tool cards from skills */
+#about .skill-card {
+  border-radius: 50px;
+  overflow: hidden;
+  position: relative;
+  transition: all 0.4s ease;
+  border: none;
+}
+
+#about .skill-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  z-index: 1;
+  background: linear-gradient(90deg, #28a745, #218838);
+}
+
+#about .skill-card .card-body {
+  padding: 2rem;
+  z-index: 2;
+  position: relative;
+}
+
+#about .skill-card i {
+  transition: all 0.3s ease;
+}
+
+#about .skill-card:hover i {
+  transform: scale(1.1) rotate(5deg);
+}
+
+#about .skill-card .card-title {
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+#about .skill-card:hover {
+  transform: translateY(-12px) scale(1.02);
+  box-shadow: 0 25px 50px rgba(0,0,0,0.15) !important;
+}
+
+#about .skill-card:hover .card-title {
+  color: #ffc107;
+}
+
