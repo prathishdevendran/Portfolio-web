@@ -1,13 +1,21 @@
-  /* Skills Styles - Individual Cards */
+/* Skills Styles - Individual Cards */
 #skills {
   background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
   min-height: 100vh;
+}
+
+.dark-mode #skills {
+  background: transparent;
 }
 
 #skills h2 {
   color: #333;
   font-weight: 700;
   position: relative;
+}
+
+.dark-mode #skills h2 {
+  color: #f8fafc;
 }
 
 #skills h2::after {
@@ -22,6 +30,10 @@
   border-radius: 2px;
 }
 
+.dark-mode #skills h2::after {
+  background: linear-gradient(45deg, #1d4ed8, #3b82f6);
+}
+
 .skill-card {
   background: white;
   border-radius: 50px;
@@ -29,6 +41,12 @@
   position: relative;
   transition: all 0.4s ease;
   border: none;
+}
+
+.dark-mode .skill-card {
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(59,130,246,0.3);
 }
 
 .skill-card::before {
@@ -57,6 +75,22 @@
   background: linear-gradient(90deg, #ffc107, #e0a800);
 }
 
+.dark-mode .lang-card::before {
+  background: linear-gradient(90deg, #1d4ed8, #3b82f6);
+}
+
+.dark-mode .web-card::before {
+  background: linear-gradient(90deg, #1d4ed8, #3b82f6);
+}
+
+.dark-mode .tool-card::before {
+  background: linear-gradient(90deg, #1d4ed8, #3b82f6);
+}
+
+.dark-mode .soft-card::before {
+  background: linear-gradient(90deg, #1d4ed8, #3b82f6);
+}
+
 .skill-card .card-body {
   padding: 2rem;
   z-index: 2;
@@ -77,12 +111,13 @@
   color: #333;
 }
 
-
-
+.dark-mode .skill-card .card-title {
+  color: #f1f5f9;
+}
 
 .skill-card:hover {
   transform: translateY(-12px) scale(1.02);
-  box-shadow: 0 25px 50px rgba(0,0,0,0.15) !important;
+  box-shadow: 0 25px 50px rgba(59,130,246,0.4) !important;
 }
 
 .skill-card:hover .card-title {
@@ -101,5 +136,5 @@
 
 /* Enhance shared card hover for skills */
 .skill-card:hover {
-  border: 1px solid rgba(255,193,7,0.3);
+  border: 1px solid rgba(59,130,246,0.3);
 }

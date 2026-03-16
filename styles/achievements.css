@@ -11,8 +11,46 @@
   border: 1px solid rgba(255, 255, 255, 0.25);
   border-radius: 25px;
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  box-shadow: 0 10px 40px rgba(245, 87, 108, 0.3);
+  box-shadow: 0 10px 40px rgba(59,130,246,0.3);
   overflow: hidden;
+}
+
+.dark-mode #achievements {
+  background: transparent;
+}
+
+.dark-mode #achievements .card {
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(59,130,246,0.3);
+  box-shadow: 0 10px 40px rgba(59,130,246,0.3);
+}
+
+.dark-mode #achievements .card:hover {
+  box-shadow: 0 25px 50px rgba(59,130,246,0.5);
+}
+
+.dark-mode #achievements .card-title {
+  background: linear-gradient(135deg, #60a5fa, #a5b4fc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.dark-mode #achievements h2 {
+  background: linear-gradient(135deg, #60a5fa, #a5b4fc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.dark-mode #achievements .btn-primary {
+  background: linear-gradient(135deg, #1d4ed8, #3b82f6);
+  box-shadow: 0 8px 20px rgba(29,78,216,0.4);
+}
+
+.dark-mode #achievements .btn-primary:hover {
+  box-shadow: 0 15px 35px rgba(59,130,246,0.6);
 }
 
 #achievements .card:hover {

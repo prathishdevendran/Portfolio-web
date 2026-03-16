@@ -1,6 +1,6 @@
 /* Projects Styles */
 #projects {
-  background: white;
+  background: transparent;
   min-height: 100vh;
 }
 
@@ -8,6 +8,14 @@
   color: #333;
   font-weight: 700;
   position: relative;
+}
+
+.dark-mode #projects h2 {
+  color: #f8fafc !important;
+}
+
+.dark-mode #projects h2 {
+  color: #f8fafc !important;
 }
 
 #projects h2::after {
@@ -54,7 +62,29 @@
 
 #projects .card:hover {
   transform: translateY(-12px) scale(1.02);
-  box-shadow: 0 25px 50px rgba(0,0,0,0.15) !important;
+  box-shadow: 0 25px 50px rgba(59,130,246,0.4) !important;
+}
+
+.dark-mode #projects {
+  background: transparent;
+}
+
+.dark-mode #projects .card {
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(59,130,246,0.3);
+}
+
+.dark-mode #projects .card::before {
+  background: linear-gradient(90deg, #1d4ed8, #3b82f6);
+}
+
+.dark-mode #projects h2::after {
+  background: linear-gradient(45deg, #1d4ed8, #3b82f6);
+}
+
+.dark-mode #projects .card-text {
+  color: #cbd5e1;
 }
 
 #projects .card-title:hover {

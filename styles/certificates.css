@@ -11,8 +11,41 @@
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 20px;
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+  box-shadow: 0 8px 32px rgba(59,130,246,0.37);
   overflow: hidden;
+}
+
+.dark-mode #certificates {
+  background: transparent;
+}
+
+.dark-mode #certificates .card {
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(59,130,246,0.3);
+  box-shadow: 0 8px 32px rgba(59,130,246,0.37);
+}
+
+.dark-mode #certificates .card:hover {
+  box-shadow: 0 20px 40px rgba(59,130,246,0.6);
+}
+
+.dark-mode #certificates .card-title {
+  background: linear-gradient(135deg, #60a5fa, #a5b4fc);
+}
+
+.dark-mode #certificates h2 {
+  background: linear-gradient(135deg, #60a5fa, #a5b4fc);
+}
+
+.dark-mode #certificates .btn-outline-primary {
+  background: linear-gradient(white, white) padding-box, linear-gradient(135deg, #1d4ed8, #3b82f6) border-box;
+  color: #60a5fa;
+}
+
+.dark-mode #certificates .btn-outline-primary:hover {
+  background: linear-gradient(135deg, #1d4ed8, #3b82f6);
+  box-shadow: 0 10px 25px rgba(29,78,216,0.4);
 }
 
 #certificates .card:hover {
@@ -30,6 +63,14 @@
   font-size: 1.3rem;
   margin-bottom: 1rem;
   text-shadow: none;
+  color: #f8fafc !important;
+}
+
+.dark-mode #certificates .card-title {
+  background: linear-gradient(135deg, #60a5fa, #a5b4fc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #f8fafc !important;
 }
 
 #certificates .fa-award {
@@ -60,12 +101,20 @@
 }
 
 #certificates h2 {
-  background: linear-gradient(135deg, #ffd700, #ffed4e);
+  background: linear-gradient(135deg, #60a5fa, #a5b4fc);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  color: #f8fafc !important;
   font-weight: 800;
   font-size: clamp(2rem, 5vw, 4rem);
+}
+
+.dark-mode #certificates h2 {
+  background: linear-gradient(135deg, #60a5fa, #a5b4fc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #f8fafc !important;
 }
 
 @media (max-width: 768px) {

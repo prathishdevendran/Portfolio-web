@@ -1,7 +1,47 @@
 /* Home Styles */
 #home {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #1e1b4b 0%, #0f172a 100%);
   color: white;
+}
+
+.dark-mode #home {
+  background: linear-gradient(135deg, #1e1b4b 0%, #0f172a 100%) !important;
+}
+
+.dark-mode .hero-skill-card {
+  background: rgba(255,255,255,0.12) !important;
+  border: 1px solid rgba(59,130,246,0.5) !important;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+}
+
+.dark-mode .hero-skill-card.c-lang {
+  background: linear-gradient(135deg, rgba(139,69,19,0.6), rgba(205,133,63,0.6)) !important;
+  border: 2px solid rgba(139,69,19,0.7) !important;
+}
+.dark-mode .hero-skill-card.cpp-lang {
+  background: linear-gradient(135deg, rgba(25,25,112,0.6), rgba(70,130,180,0.6)) !important;
+  border: 2px solid rgba(25,25,112,0.7) !important;
+}
+.dark-mode .hero-skill-card.python-lang {
+  background: linear-gradient(135deg, rgba(153,102,0,0.6), rgba(255,215,0,0.6)) !important;
+  border: 2px solid rgba(153,102,0,0.7) !important;
+}
+.dark-mode .hero-skill-card.java-lang {
+  background: linear-gradient(135deg, rgba(0,100,0,0.6), rgba(107,142,35,0.6)) !important;
+  border: 2px solid rgba(0,100,0,0.7) !important;
+}
+.dark-mode .hero-skill-card.html-lang {
+  background: linear-gradient(135deg, rgba(128,0,0,0.6), rgba(220,20,60,0.6)) !important;
+  border: 2px solid rgba(128,0,0,0.7) !important;
+}
+.dark-mode .hero-skill-card.css-lang {
+  background: linear-gradient(135deg, rgba(0,0,128,0.6), rgba(30,144,255,0.6)) !important;
+  border: 2px solid rgba(0,0,128,0.7) !important;
+}
+
+.dark-mode .profile-pic {
+  border-color: rgba(59,130,246,0.5);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.5);
 }
 
 .hero-skills {
