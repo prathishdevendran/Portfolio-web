@@ -133,23 +133,102 @@ body.dark-mode section {
   border-width: 2px;
 }
 
-.contact-footer li {
-  font-size: 1.1rem;
-  margin-bottom: 0.5rem;
+/* Contact Icon Cards - Footer */
+.contact-cards-container {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 1rem;
 }
 
-.contact-footer li i {
-  color: #ffc107;
-  width: 20px;
-}
-
-.contact-footer a {
-  color: white;
+.contact-icon-card {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-decoration: none;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
 }
 
-.contact-footer a:hover {
-  color: #ffc107;
+.contact-icon-card i {
+  font-size: 1.5rem;
+  z-index: 2;
+  position: relative;
+}
+
+.contact-icon-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,193,7,0.4), transparent);
+  transition: left 0.6s;
+}
+
+.contact-icon-card:hover::before {
+  left: 100%;
+}
+
+.contact-icon-card:hover {
+  transform: translateY(-12px) scale(1.15) rotate(360deg);
+  box-shadow: 0 20px 40px rgba(255,193,7,0.4);
+  animation: iconPulseGlow 1.5s infinite;
+}
+
+@keyframes iconPulseGlow {
+  0%, 100% { box-shadow: 0 20px 40px rgba(255,193,7,0.4); }
+  50% { box-shadow: 0 20px 40px rgba(255,193,7,0.6), 0 0 30px rgba(255,193,7,0.3); }
+}
+
+/* Light mode cards */
+.contact-icon-card {
+  background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+  color: #495057;
+  border: 2px solid rgba(255,193,7,0.3);
+}
+
+.contact-icon-card:hover {
+  background: linear-gradient(135deg, #ffc107, #ffed4a);
+  color: #212529;
+}
+
+/* Dark mode overrides */
+.dark-mode .contact-icon-card {
+  background: linear-gradient(135deg, rgba(255,255,255,0.12), rgba(255,255,255,0.06));
+  color: #e2e8f0;
+  border: 2px solid rgba(59,130,246,0.4);
+  backdrop-filter: blur(12px);
+}
+
+.dark-mode .contact-icon-card:hover {
+  background: linear-gradient(135deg, rgba(255,193,7,0.3), rgba(255,193,7,0.1)) !important;
+  color: #f1f5f9;
+  box-shadow: 0 20px 40px rgba(255,193,7,0.5), 0 0 30px rgba(255,193,7,0.3) !important;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .contact-cards-container {
+    gap: 0.75rem;
+  }
+  .contact-icon-card {
+    width: 50px;
+    height: 50px;
+  }
+  .contact-icon-card i {
+    font-size: 1.25rem;
+  }
+  .contact-icon-card:hover {
+    transform: translateY(-8px) scale(1.1);
+  }
 }
 
 @media (max-width: 768px) {
