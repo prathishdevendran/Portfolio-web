@@ -1,0 +1,892 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;500;600;700;800&display=swap');
+
+/* CSS Variables for Samsung One UI Design System */
+:root {
+  --font-title: 'Outfit', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  
+  /* Primary Accent: Samsung One UI Blue */
+  --accent-color: #0c66e4;
+  --accent-color-rgb: 12, 102, 228;
+  --accent-hover: #0055c4;
+  
+  /* Color Semantics for Cards/Controls */
+  --c-blue: #2d68c4;
+  --c-blue-bg: rgba(45, 104, 196, 0.12);
+  --c-green: #2e7d32;
+  --c-green-bg: rgba(46, 125, 50, 0.12);
+  --c-yellow: #b26a00;
+  --c-yellow-bg: rgba(178, 106, 0, 0.12);
+  --c-red: #c62828;
+  --c-red-bg: rgba(198, 40, 40, 0.12);
+  --c-purple: #6a1b9a;
+  --c-purple-bg: rgba(106, 27, 154, 0.12);
+  --c-cyan: #00838f;
+  --c-cyan-bg: rgba(0, 131, 143, 0.12);
+
+  /* Light Theme Defaults */
+  --bg-primary: #f4f5f8;
+  --bg-secondary: #ffffff;
+  --bg-secondary-rgb: 255, 255, 255;
+  --text-primary: #121214;
+  --text-secondary: #6e6e73;
+  --text-tertiary: #a1a1a6;
+  --border-color: rgba(0, 0, 0, 0.05);
+  --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.02), 0 1px 3px rgba(0, 0, 0, 0.02);
+  --hover-bg: rgba(0, 0, 0, 0.03);
+  --nav-bg: rgba(255, 255, 255, 0.8);
+  --nav-border: rgba(0, 0, 0, 0.06);
+  --header-height-expanded: 180px;
+  --header-height-collapsed: 70px;
+  --transition-speed: 0.3s;
+  --spring-easing: cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Dark Theme Variables */
+body.dark-mode {
+  --bg-primary: #000000; /* True Black for OLED */
+  --bg-secondary: #161618;
+  --bg-secondary-rgb: 22, 22, 24;
+  --text-primary: #f5f5f7;
+  --text-secondary: #8e8e93;
+  --text-tertiary: #5c5c60;
+  --border-color: rgba(255, 255, 255, 0.06);
+  --card-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  --hover-bg: rgba(255, 255, 255, 0.04);
+  --nav-bg: rgba(22, 22, 24, 0.8);
+  --nav-border: rgba(255, 255, 255, 0.08);
+
+  /* Adjust Semantics for Dark Mode Contrast */
+  --c-blue: #64b5f6;
+  --c-blue-bg: rgba(100, 181, 246, 0.15);
+  --c-green: #81c784;
+  --c-green-bg: rgba(129, 199, 132, 0.15);
+  --c-yellow: #ffd54f;
+  --c-yellow-bg: rgba(255, 213, 79, 0.15);
+  --c-red: #e57373;
+  --c-red-bg: rgba(229, 115, 115, 0.15);
+  --c-purple: #ba68c8;
+  --c-purple-bg: rgba(186, 104, 200, 0.15);
+  --c-cyan: #4dd0e1;
+  --c-cyan-bg: rgba(77, 208, 225, 0.15);
+}
+
+/* General & Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  scroll-behavior: smooth;
+  height: 100%;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.5;
+  transition: background-color var(--transition-speed) var(--spring-easing),
+              color var(--transition-speed) var(--spring-easing);
+  overflow-x: hidden;
+  padding-bottom: 90px; /* Offset bottom nav dock */
+}
+
+/* Squircles - One UI Signature Rounded Element */
+.squircle {
+  width: 44px;
+  height: 44px;
+  border-radius: 16px; /* Mimics Samsung Super-Ellipse */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  flex-shrink: 0;
+  transition: transform 0.2s ease;
+}
+.squircle i {
+  display: block;
+}
+
+/* Squircles Accent Colors */
+.sq-blue { background-color: var(--c-blue-bg); color: var(--c-blue); }
+.sq-green { background-color: var(--c-green-bg); color: var(--c-green); }
+.sq-yellow { background-color: var(--c-yellow-bg); color: var(--c-yellow); }
+.sq-red { background-color: var(--c-red-bg); color: var(--c-red); }
+.sq-purple { background-color: var(--c-purple-bg); color: var(--c-purple); }
+.sq-cyan { background-color: var(--c-cyan-bg); color: var(--c-cyan); }
+
+/* One UI App/Settings Icons (Rounded Squircles) */
+.card-icon-container {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+/* Focus Blocks (Unified One UI Cards) */
+.focus-block {
+  background-color: var(--bg-secondary);
+  border-radius: 28px; /* Extremely rounded One UI signature */
+  padding: 24px;
+  margin-bottom: 20px;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--card-shadow);
+  transition: transform 0.25s var(--spring-easing), 
+              box-shadow 0.25s var(--spring-easing),
+              background-color var(--transition-speed) var(--spring-easing);
+}
+
+.focus-block:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.04);
+}
+
+body.dark-mode .focus-block:hover {
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+  border-color: rgba(255,255,255,0.1);
+}
+
+/* Section Title - Monotone & Clean Setting Style */
+.section-title {
+  font-family: var(--font-title);
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 24px;
+  padding-left: 8px;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.section-title::after {
+  content: '';
+  flex-grow: 1;
+  height: 1px;
+  background-color: var(--border-color);
+}
+
+/* One UI 8.5 Smooth Toggle Switch */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 28px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--hover-bg);
+  border: 1px solid var(--border-color);
+  transition: 0.3s var(--spring-easing);
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 3px;
+  bottom: 3px;
+  background-color: #8e8e93;
+  transition: 0.3s var(--spring-easing);
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+}
+
+input:checked + .slider:before {
+  transform: translateX(22px);
+  background-color: #ffffff;
+}
+
+.settings-list-header {
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  letter-spacing: 0.8px;
+  margin: 24px 0 8px 20px;
+}
+
+/* Settings Items & Lists */
+.settings-list {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-secondary);
+  border-radius: 28px;
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  margin-bottom: 20px;
+}
+
+.settings-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  text-decoration: none;
+  color: inherit;
+  border-bottom: 1px solid var(--border-color);
+  transition: background-color 0.2s ease;
+}
+
+.settings-item:last-child {
+  border-bottom: none;
+}
+
+.settings-item:hover {
+  background-color: var(--hover-bg);
+}
+
+.settings-item-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-grow: 1;
+}
+
+.settings-item-title {
+  font-weight: 500;
+  color: var(--text-primary);
+  font-size: 0.95rem;
+}
+
+.settings-item-desc {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  margin-top: 1px;
+}
+
+.settings-item-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-tertiary);
+  font-size: 0.9rem;
+}
+
+.settings-badge {
+  background-color: var(--hover-bg);
+  color: var(--text-secondary);
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+/* Main Container Layout */
+.oneui-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* One UI 8.5 Collapsible Large Header */
+.oneui-header-container {
+  position: relative;
+  z-index: 100;
+}
+
+.oneui-header {
+  height: var(--header-height-expanded);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding-bottom: 24px;
+  transition: height 0.2s var(--spring-easing), padding-bottom 0.2s var(--spring-easing);
+  position: relative;
+}
+
+.oneui-header-inner {
+  text-align: center;
+  width: 100%;
+}
+
+.oneui-header-title {
+  font-family: var(--font-title);
+  font-size: 2.2rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  color: var(--text-primary);
+  transition: font-size 0.2s var(--spring-easing), transform 0.2s var(--spring-easing);
+}
+
+.oneui-header-subtitle {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  margin-top: 6px;
+  font-weight: 500;
+  transition: opacity 0.2s var(--spring-easing), transform 0.2s var(--spring-easing);
+}
+
+/* Sticky top navigation that appears when scrolled */
+.oneui-sticky-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--header-height-collapsed);
+  background-color: var(--nav-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--nav-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  z-index: 99;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-10px);
+  transition: opacity 0.2s var(--spring-easing), transform 0.2s var(--spring-easing);
+}
+
+.oneui-sticky-title {
+  font-family: var(--font-title);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.scrolled .oneui-header {
+  height: var(--header-height-collapsed);
+  padding-bottom: 0;
+}
+
+.scrolled .oneui-header-title {
+  font-size: 1.4rem;
+  transform: translateY(-12px);
+  opacity: 0;
+}
+
+.scrolled .oneui-header-subtitle {
+  opacity: 0;
+  transform: translateY(-12px);
+}
+
+.scrolled .oneui-sticky-bar {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+/* Hero Section Widget style */
+.oneui-hero-card {
+  text-align: center;
+  padding: 32px 24px;
+}
+
+.oneui-profile-container {
+  position: relative;
+  width: 140px;
+  height: 140px;
+  margin: 0 auto 20px;
+}
+
+.oneui-profile-pic {
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 50px; /* Squircle avatar */
+  border: 4px solid var(--bg-secondary);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s var(--spring-easing);
+}
+
+.oneui-profile-container:hover .oneui-profile-pic {
+  transform: scale(1.03);
+}
+
+.oneui-hero-badge {
+  background-color: var(--c-blue-bg);
+  color: var(--c-blue);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  display: inline-block;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.oneui-hero-desc {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  max-width: 600px;
+  margin: 16px auto 0;
+  line-height: 1.6;
+}
+
+/* Mini Quick Status Panel / Dashboard */
+.status-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.status-card {
+  background-color: var(--bg-secondary);
+  border-radius: 24px;
+  padding: 16px;
+  text-align: center;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--card-shadow);
+  transition: transform 0.2s ease;
+}
+
+.status-card:hover {
+  transform: translateY(-2px);
+}
+
+.status-val {
+  font-family: var(--font-title);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  line-height: 1.2;
+}
+
+.status-label {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  margin-top: 4px;
+  font-weight: 500;
+}
+
+/* Skill UI Grid Cards styling */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+  gap: 12px;
+  width: 100%;
+}
+
+.skill-card {
+  background-color: var(--hover-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  padding: 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: transform 0.2s var(--spring-easing), background-color 0.2s var(--spring-easing), border-color 0.2s var(--spring-easing);
+  cursor: default;
+}
+
+.skill-card:hover {
+  transform: translateY(-2px);
+  background-color: var(--bg-secondary);
+  border-color: rgba(var(--accent-color-rgb), 0.2);
+}
+
+.skill-card-info {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.3;
+}
+
+.skill-card-name {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--text-primary);
+}
+
+.skill-card-category {
+  font-size: 0.72rem;
+  color: var(--text-secondary);
+  margin-top: 1px;
+}
+
+
+/* Custom categories tabs in One UI style */
+.category-badges {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+
+.cat-badge {
+  background-color: var(--hover-bg);
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.cat-badge.active, .cat-badge:hover {
+  background-color: var(--accent-color);
+  color: #ffffff;
+  border-color: var(--accent-color);
+}
+
+/* Projects Cards (Focus Block style) */
+.project-card {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.project-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.project-title {
+  font-family: var(--font-title);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.project-desc {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.project-bullet {
+  font-size: 0.85rem;
+  color: var(--text-primary);
+  margin-left: 8px;
+  position: relative;
+  padding-left: 14px;
+  margin-top: 6px;
+}
+
+.project-bullet::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--accent-color);
+  font-weight: bold;
+}
+
+.tech-badges {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+
+.tech-badge {
+  background-color: var(--hover-bg);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+/* Samsung Buttons styling */
+.oneui-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: var(--accent-color);
+  color: #ffffff !important;
+  font-weight: 500;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 20px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.2s;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(var(--accent-color-rgb), 0.15);
+}
+
+.oneui-btn:hover {
+  background-color: var(--accent-hover);
+  transform: translateY(-1px);
+}
+
+.oneui-btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: transparent;
+  color: var(--accent-color) !important;
+  border: 1px solid var(--accent-color);
+  border-radius: 20px;
+  padding: 9px 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+  text-decoration: none;
+}
+
+.oneui-btn-outline:hover {
+  background-color: rgba(var(--accent-color-rgb), 0.05);
+}
+
+.btn-group-custom {
+  display: flex;
+  gap: 12px;
+  margin-top: 14px;
+}
+
+/* Timelines / Education style */
+.oneui-timeline {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding-left: 28px;
+}
+
+.oneui-timeline::before {
+  content: '';
+  position: absolute;
+  top: 6px;
+  left: 9px;
+  width: 2px;
+  height: calc(100% - 24px);
+  background-color: var(--border-color);
+}
+
+.timeline-event {
+  position: relative;
+  margin-bottom: 24px;
+}
+
+.timeline-event:last-child {
+  margin-bottom: 0;
+}
+
+.timeline-event::before {
+  content: '';
+  position: absolute;
+  left: -24px;
+  top: 6px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: var(--bg-primary);
+  border: 3px solid var(--accent-color);
+  z-index: 2;
+}
+
+.timeline-title {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--text-primary);
+}
+
+.timeline-sub {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  margin-top: 2px;
+}
+
+.timeline-desc {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-top: 6px;
+  line-height: 1.4;
+}
+
+/* Dynamic Bottom Reachability Dock */
+.oneui-nav-dock {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  background-color: var(--nav-bg);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid var(--nav-border);
+  border-radius: 40px;
+  padding: 8px 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  max-width: 95%;
+  transition: background-color var(--transition-speed), border var(--transition-speed);
+}
+
+body.dark-mode .oneui-nav-dock {
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+}
+
+.dock-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: var(--text-secondary);
+  padding: 6px 14px;
+  border-radius: 30px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  transition: all 0.25s var(--spring-easing);
+  min-width: 50px;
+}
+
+.dock-item i {
+  font-size: 1.15rem;
+  margin-bottom: 3px;
+  transition: transform 0.2s ease;
+}
+
+.dock-item:hover {
+  color: var(--text-primary);
+}
+
+.dock-item:hover i {
+  transform: translateY(-2px);
+}
+
+.dock-item.active {
+  background-color: var(--hover-bg);
+  color: var(--accent-color);
+}
+
+/* Custom Contact Form */
+.oneui-form-group {
+  margin-bottom: 16px;
+}
+
+.oneui-input {
+  width: 100%;
+  background-color: var(--hover-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 18px; /* Smooth rounded shape */
+  padding: 14px 18px;
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  transition: border-color 0.2s, background-color 0.2s;
+  outline: none;
+}
+
+.oneui-input:focus {
+  border-color: var(--accent-color);
+  background-color: var(--bg-secondary);
+}
+
+textarea.oneui-input {
+  resize: none;
+  min-height: 120px;
+}
+
+/* Custom Social Contact Grid in One UI settings menu shape */
+.oneui-social-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.social-card {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: 24px;
+  padding: 16px 8px;
+  text-align: center;
+  text-decoration: none;
+  color: var(--text-primary);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  transition: transform 0.2s, background-color 0.2s;
+  box-shadow: var(--card-shadow);
+}
+
+.social-card:hover {
+  transform: translateY(-3px);
+  background-color: var(--hover-bg);
+}
+
+.social-card span {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+/* Footer styling */
+.oneui-footer {
+  text-align: center;
+  padding: 40px 16px;
+  font-size: 0.8rem;
+  color: var(--text-tertiary);
+  border-top: 1px solid var(--border-color);
+  margin-top: 40px;
+}
+
+/* Responsiveness adjustments */
+@media (max-width: 600px) {
+  :root {
+    --header-height-expanded: 160px;
+  }
+  
+  .oneui-header-title {
+    font-size: 1.8rem;
+  }
+  
+  .dock-item span {
+    display: none; /* Hide text on small screens, keep icons only for premium compact feel */
+  }
+  
+  .dock-item {
+    padding: 10px;
+    min-width: 44px;
+  }
+  
+  .dock-item i {
+    font-size: 1.3rem;
+    margin-bottom: 0;
+  }
+  
+  .status-grid {
+    gap: 8px;
+  }
+  
+  .status-card {
+    padding: 12px 6px;
+  }
+  
+  .status-val {
+    font-size: 1.15rem;
+  }
+  
+  .status-label {
+    font-size: 0.65rem;
+  }
+}

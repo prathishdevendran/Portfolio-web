@@ -1,12 +1,734 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>D PRATHISH - Portfolio</title>
-    <meta http-equiv="refresh" content="0; url=pages/home.html">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>D PRATHISH | Portfolio</title>
+  <meta name="description" content="Portfolio of D Prathish, a Computer Science student at LPU specializing in Machine Learning, Android Development, and Data Structures.">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Samsung One UI 8.5 Custom Stylesheet -->
+  <link rel="stylesheet" href="./styles/oneui.css">
+  
+  <style>
+    /* Section specific overrides and enhancements */
+    section {
+      scroll-margin-top: 80px; /* Offset for sticky bar */
+      padding-top: 24px;
+      padding-bottom: 24px;
+    }
+    
+    /* Profile Pic Layout */
+    .profile-card {
+      position: relative;
+    }
+    
+    /* Project Card Image preview */
+    .project-preview {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 20px;
+      margin-bottom: 14px;
+      border: 1px solid var(--border-color);
+    }
+    
+    /* Skills Category Controller */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+      transition: all 0.3s ease;
+    }
+    
+    @media (min-width: 768px) {
+      .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+      }
+      
+      .oneui-timeline {
+        padding-left: 36px;
+      }
+    }
+  </style>
 </head>
 <body>
-    <p>Redirecting to <a href="pages/home.html">Portfolio Home</a>...</p>
+
+  <!-- Sticky Top Nav Bar (Fades in on scroll in One UI style) -->
+  <div class="oneui-sticky-bar" id="stickyBar">
+    <div class="oneui-sticky-title">D Prathish</div>
+    <div style="display: flex; align-items: center; gap: 16px;">
+      <!-- Light/Dark Toggle Switch -->
+      <label class="switch" title="Toggle Theme">
+        <input type="checkbox" id="themeToggleCheckbox">
+        <span class="slider"></span>
+      </label>
+    </div>
+  </div>
+
+  <!-- One UI Collapsible Header (Large Header) -->
+  <div class="oneui-header-container">
+    <div class="oneui-container">
+      <div class="oneui-header" id="oneuiHeader">
+        <div class="oneui-header-inner">
+          <div class="oneui-header-title" id="headerTitle">D Prathish</div>
+          <div class="oneui-header-subtitle" id="headerSubtitle">Computer Science Student &amp; Developer</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Content Container -->
+  <main class="oneui-container">
+
+    <!-- HOME / HERO SECTION -->
+    <section id="home">
+      <!-- Hero Focus Block -->
+      <div class="focus-block oneui-hero-card">
+        <div class="oneui-profile-container">
+          <img src="./profile_pic.jpg" alt="D Prathish profile image" class="oneui-profile-pic">
+        </div>
+        <span class="oneui-hero-badge">Lovely Professional University</span>
+        <h1 style="font-family: var(--font-title); font-size: 1.8rem; font-weight: 700; margin-bottom: 8px;">D PRATHISH</h1>
+        <p class="oneui-hero-desc">
+          I am a Computer Science student at LPU. I specialize in Machine Learning, Android development, and Data Structures. I am passionate about creating innovative, high-fidelity solutions and continuously learning new technologies to build impactful, professional applications.
+        </p>
+      </div>
+
+      <!-- Quick Dashboard Grid -->
+      <div class="status-grid">
+        <div class="status-card">
+          <div class="status-val">7.98</div>
+          <div class="status-label">B.Tech CGPA</div>
+        </div>
+        <div class="status-card">
+          <div class="status-val">3+</div>
+          <div class="status-label">Projects</div>
+        </div>
+        <div class="status-card">
+          <a href="https://www.hackerrank.com/profile/prathishdevendr1" target="_blank" style="text-decoration: none;">
+            <div class="status-val">5 ★</div>
+            <div class="status-label">HackerRank</div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Key Tools Focus Block -->
+      <div class="focus-block">
+        <div class="section-title">
+          <span class="squircle sq-blue"><i class="fas fa-toolbox"></i></span> Key Focus Areas
+        </div>
+        <div class="settings-list">
+          <div class="settings-item">
+            <div class="settings-item-left">
+              <span class="squircle sq-purple"><i class="fas fa-brain"></i></span>
+              <div>
+                <div class="settings-item-title">Machine Learning</div>
+                <div class="settings-item-desc">Data modeling, ARIMA prediction, PCA &amp; Clustering</div>
+              </div>
+            </div>
+            <div class="settings-item-right">Core</div>
+          </div>
+          <div class="settings-item">
+            <div class="settings-item-left">
+              <span class="squircle sq-green"><i class="fab fa-android"></i></span>
+              <div>
+                <div class="settings-item-title">Android Development</div>
+                <div class="settings-item-desc">Native applications, layouts, UI reachability</div>
+              </div>
+            </div>
+            <div class="settings-item-right">Core</div>
+          </div>
+          <div class="settings-item">
+            <div class="settings-item-left">
+              <span class="squircle sq-cyan"><i class="fas fa-sitemap"></i></span>
+              <div>
+                <div class="settings-item-title">Data Structures &amp; Algorithms</div>
+                <div class="settings-item-desc">Optimizing complexity, Queues, Graphs, Trees</div>
+              </div>
+            </div>
+            <div class="settings-item-right">Core</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS SECTION -->
+    <section id="skills">
+      <div class="focus-block" style="padding-bottom: 8px;">
+        <div class="section-title">
+          <span class="squircle sq-green"><i class="fas fa-code"></i></span> Technical Skills
+        </div>
+        <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 8px; padding-left: 8px;">
+          Listing of core proficiencies and platform competencies.
+        </p>
+      </div>
+
+      <!-- Languages Settings Group -->
+      <div class="settings-list-header">Programming Languages</div>
+      <div class="settings-list">
+        <div class="settings-item">
+          <div class="settings-item-left">
+            <span class="squircle sq-yellow"><i class="fab fa-python"></i></span>
+            <div>
+              <div class="settings-item-title">Python</div>
+              <div class="settings-item-desc">Machine Learning models, ARIMA, scripts</div>
+            </div>
+          </div>
+          <div class="settings-item-right">
+            <span class="settings-badge">Advanced</span>
+          </div>
+        </div>
+        <div class="settings-item">
+          <div class="settings-item-left">
+            <span class="squircle sq-blue"><i class="fab fa-cuttlefish"></i></span>
+            <div>
+              <div class="settings-item-title">C++</div>
+              <div class="settings-item-desc">Object-oriented programming, complex DSA</div>
+            </div>
+          </div>
+          <div class="settings-item-right">
+            <span class="settings-badge">Advanced</span>
+          </div>
+        </div>
+        <div class="settings-item">
+          <div class="settings-item-left">
+            <span class="squircle sq-purple"><i class="fas fa-c"></i></span>
+            <div>
+              <div class="settings-item-title">C</div>
+              <div class="settings-item-desc">Procedural code foundations, memory pointers</div>
+            </div>
+          </div>
+          <div class="settings-item-right">
+            <span class="settings-badge">Proficient</span>
+          </div>
+        </div>
+        <div class="settings-item">
+          <div class="settings-item-left">
+            <span class="squircle sq-red"><i class="fab fa-java"></i></span>
+            <div>
+              <div class="settings-item-title">Java</div>
+              <div class="settings-item-desc">Application code logic, circular queue structures</div>
+            </div>
+          </div>
+          <div class="settings-item-right">
+            <span class="settings-badge">Intermediate</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Web & Development Tools Group -->
+      <div class="settings-list-header">Web &amp; Development Tools</div>
+      <div class="settings-list">
+        <div class="settings-item">
+          <div class="settings-item-left">
+            <span class="squircle sq-cyan"><i class="fab fa-html5"></i></span>
+            <div>
+              <div class="settings-item-title">HTML &amp; CSS</div>
+              <div class="settings-item-desc">Responsive styling systems, semantic structures</div>
+            </div>
+          </div>
+          <div class="settings-item-right">
+            <span class="settings-badge">Advanced</span>
+          </div>
+        </div>
+        <div class="settings-item">
+          <div class="settings-item-left">
+            <span class="squircle sq-yellow"><i class="fab fa-js-square"></i></span>
+            <div>
+              <div class="settings-item-title">JavaScript</div>
+              <div class="settings-item-desc">Client-side logic, page interactions, event systems</div>
+            </div>
+          </div>
+          <div class="settings-item-right">
+            <span class="settings-badge">Proficient</span>
+          </div>
+        </div>
+        <div class="settings-item">
+          <div class="settings-item-left">
+            <span class="squircle sq-green"><i class="fab fa-android"></i></span>
+            <div>
+              <div class="settings-item-title">Android Studio</div>
+              <div class="settings-item-desc">Mobile application compilation, native layouts</div>
+            </div>
+          </div>
+          <div class="settings-item-right">
+            <span class="settings-badge">Advanced</span>
+          </div>
+        </div>
+        <div class="settings-item">
+          <div class="settings-item-left">
+            <span class="squircle sq-blue"><i class="fas fa-database"></i></span>
+            <div>
+              <div class="settings-item-title">MySQL</div>
+              <div class="settings-item-desc">Relational schema design, queries and triggers</div>
+            </div>
+          </div>
+          <div class="settings-item-right">
+            <span class="settings-badge">Intermediate</span>
+          </div>
+        </div>
+        <div class="settings-item">
+          <div class="settings-item-left">
+            <span class="squircle sq-purple"><i class="fas fa-book-open"></i></span>
+            <div>
+              <div class="settings-item-title">Jupyter Notebook</div>
+              <div class="settings-item-desc">EDA modeling, KMeans, ARIMA data modeling</div>
+            </div>
+          </div>
+          <div class="settings-item-right">
+            <span class="settings-badge">Advanced</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Core Capabilities & Soft Skills Group -->
+      <div class="settings-list-header">Core Competencies &amp; Soft Skills</div>
+      <div class="settings-list">
+        <div class="settings-item">
+          <div class="settings-item-left">
+            <span class="squircle sq-red"><i class="fas fa-lightbulb"></i></span>
+            <div>
+              <div class="settings-item-title">Problem Solving</div>
+              <div class="settings-item-desc">Logical resolution steps, HackerRank 5-Star</div>
+            </div>
+          </div>
+          <div class="settings-item-right">
+            <span class="settings-badge">Core</span>
+          </div>
+        </div>
+        <div class="settings-item">
+          <div class="settings-item-left">
+            <span class="squircle sq-cyan"><i class="fas fa-adjust"></i></span>
+            <div>
+              <div class="settings-item-title">Adaptability</div>
+              <div class="settings-item-desc">Learning new frameworks, flexible working models</div>
+            </div>
+          </div>
+          <div class="settings-item-right">
+            <span class="settings-badge">Core</span>
+          </div>
+        </div>
+        <div class="settings-item">
+          <div class="settings-item-left">
+            <span class="squircle sq-green"><i class="fas fa-users"></i></span>
+            <div>
+              <div class="settings-item-title">Teamwork &amp; Leadership</div>
+              <div class="settings-item-desc">Coordinating project steps, clear communications</div>
+            </div>
+          </div>
+          <div class="settings-item-right">
+            <span class="settings-badge">Core</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS SECTION -->
+    <section id="projects">
+      <div class="focus-block" style="padding-bottom: 8px; margin-bottom: 20px;">
+        <div class="section-title">
+          <span class="squircle sq-blue"><i class="fas fa-laptop-code"></i></span> Projects &amp; Work
+        </div>
+        <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 8px; padding-left: 8px;">
+          Explore my academic, training, and open-source software applications.
+        </p>
+      </div>
+
+      <!-- Project 1: Traffic Predictor -->
+      <div class="focus-block project-card">
+        <div>
+          <div class="project-meta">
+            <span>Machine Learning</span>
+            <span>April 2025</span>
+          </div>
+          <img src="./images/trafficVolumePrediction.png" alt="Traffic Volume Prediction Dashboard Preview" class="project-preview">
+          <h3 class="project-title">Traffic Volume Prediction</h3>
+          <div class="tech-badges">
+            <span class="tech-badge">Python</span>
+            <span class="tech-badge">ARIMA</span>
+            <span class="tech-badge">Plotly</span>
+            <span class="tech-badge">Matplotlib</span>
+            <span class="tech-badge">KMeans</span>
+            <span class="tech-badge">PCA</span>
+          </div>
+        </div>
+        <div>
+          <p class="project-desc">Targeted future traffic forecasting and congestion analysis across major Bangalore road networks for informed traffic planning.</p>
+          <div class="project-bullet">Executed extensive preprocessing, feature engineering, and EDA on temporal and traffic variables. Applied KMeans and PCA across 8 areas and 16 intersections.</div>
+          <div class="project-bullet">Constructed regression and ARIMA models with beautiful dynamic visualizations using Plotly.</div>
+          <div class="project-bullet">Achieved improved accuracy in forecasting traffic trends, travel time indices, and travel time buffers, enabling actionable insights for intelligent traffic control.</div>
+        </div>
+        <div class="btn-group-custom">
+          <a href="https://github.com/prathishdevendran/MACHINE-LEANRING-projects/blob/main/Traffic-volume-prediction/TrafficVolumePrediction%20on%20big%20data.ipynb" target="_blank" class="oneui-btn">
+            <i class="fab fa-github"></i> View Repository
+          </a>
+        </div>
+      </div>
+
+      <!-- Project 2: Queue System (Training) -->
+      <div class="focus-block project-card">
+        <div>
+          <div class="project-meta">
+            <span>Web Platform (Training)</span>
+            <span>July 2025</span>
+          </div>
+          <h3 class="project-title">Hospital Queue Management System</h3>
+          <div class="tech-badges">
+            <span class="tech-badge">Java</span>
+            <span class="tech-badge">DSA (Circular Queues)</span>
+            <span class="tech-badge">Node.js</span>
+            <span class="tech-badge">Express</span>
+            <span class="tech-badge">EJS</span>
+          </div>
+        </div>
+        <div>
+          <p class="project-desc">Built a real-time web-based application to replace manual queues with smart digital token management, optimizing waiting area flows.</p>
+          <div class="project-bullet">Designed queue generation algorithms utilizing Circular Queue data structures for resource management.</div>
+          <div class="project-bullet">Implemented real-time updates and dashboard token calls using Node.js and Express.</div>
+          <div class="project-bullet">Reduced patient wait-time confusion and delivered a clean, easy-to-use receptionist-to-patient token interface.</div>
+        </div>
+        <div class="btn-group-custom">
+          <a href="https://github.com/prathishdevendran/Digital_Queue_system-using-nodejs" target="_blank" class="oneui-btn">
+            <i class="fab fa-github"></i> Source Code
+          </a>
+          <a href="https://digital-queue-system-using-nodejs.onrender.com/" target="_blank" class="oneui-btn-outline">
+            <i class="fas fa-external-link-alt"></i> Live Demo
+          </a>
+        </div>
+      </div>
+
+      <!-- Project 3: Ecosystem -->
+      <div class="focus-block project-card">
+        <div>
+          <div class="project-meta">
+            <span>Static Web Page</span>
+            <span>Oct 2023</span>
+          </div>
+          <img src="./images/Ecosystem.jpg" alt="Ecosystem environmental Factors website Preview" class="project-preview">
+          <h3 class="project-title">Environmental Ecosystem Platform</h3>
+          <div class="tech-badges">
+            <span class="tech-badge">HTML5</span>
+            <span class="tech-badge">CSS3</span>
+            <span class="tech-badge">Responsive</span>
+          </div>
+        </div>
+        <div>
+          <p class="project-desc">Designed a responsive educational platform detailing core ecosystem concepts, environmental factors, food chains, and pollution effects.</p>
+          <div class="project-bullet">Developed a visually engaging layout focusing on readable content structures and interactive grids.</div>
+          <div class="project-bullet">Showcased ecological hierarchies and species importance through custom card styles.</div>
+        </div>
+        <div class="btn-group-custom">
+          <a href="https://github.com/prathishdevendran/ecosystem-web-page" target="_blank" class="oneui-btn">
+            <i class="fab fa-github"></i> Repository
+          </a>
+          <a href="https://prathishdevendran.github.io/ecosystem-web-page/" target="_blank" class="oneui-btn-outline">
+            <i class="fas fa-external-link-alt"></i> Live Project
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATION SECTION -->
+    <section id="education">
+      <div class="focus-block">
+        <div class="section-title">
+          <span class="squircle sq-purple"><i class="fas fa-graduation-cap"></i></span> Education History
+        </div>
+        <div class="oneui-timeline">
+          <div class="timeline-event">
+            <div class="timeline-title">Lovely Professional University</div>
+            <div class="timeline-sub">B.Tech in Computer Science and Engineering | CGPA: 7.98</div>
+            <div class="timeline-desc">August 2023 - Present. Immersed in Advanced Data Structures, Machine Learning systems, DBMS, and Application Frameworks.</div>
+          </div>
+          <div class="timeline-event">
+            <div class="timeline-title">Swami Sant Dass Public School</div>
+            <div class="timeline-sub">Intermediate (XII) | Score: 89% (CS: 99/100)</div>
+            <div class="timeline-desc">April 2022 - March 2023. Specialized in Science and Computer Science tracks.</div>
+          </div>
+          <div class="timeline-event">
+            <div class="timeline-title">Saffron Public School</div>
+            <div class="timeline-sub">Matriculation (X) | Score: 61%</div>
+            <div class="timeline-desc">May 2020 - March 2021. Core education base.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ACHIEVEMENTS & CERTIFICATES SECTION -->
+    <section id="achievements">
+      <div class="focus-block">
+        <div class="section-title">
+          <span class="squircle sq-yellow"><i class="fas fa-trophy"></i></span> Achievements &amp; Ranks
+        </div>
+        <div class="settings-list">
+          <div class="settings-item">
+            <div class="settings-item-left">
+              <span class="squircle sq-yellow"><i class="fas fa-crown"></i></span>
+              <div>
+                <div class="settings-item-title">School Computer Science Topper</div>
+                <div class="settings-item-desc">Achieved Rank 1 in Computer Science at school intermediate level</div>
+              </div>
+            </div>
+            <div class="settings-badge">Grade XII</div>
+          </div>
+          <div class="settings-item">
+            <div class="settings-item-left">
+              <span class="squircle sq-blue"><i class="fab fa-python"></i></span>
+              <div>
+                <div class="settings-item-title">Python 5-Star Programmer</div>
+                <div class="settings-item-desc">Earned 5 gold stars on HackerRank algorithm platforms</div>
+              </div>
+            </div>
+            <div class="settings-badge">April 2024</div>
+          </div>
+          <div class="settings-item">
+            <div class="settings-item-left">
+              <span class="squircle sq-green"><i class="fas fa-puzzle-piece"></i></span>
+              <div>
+                <div class="settings-item-title">Problem Solving 5-Star</div>
+                <div class="settings-item-desc">Earned 5 gold stars on HackerRank problem solving modules</div>
+              </div>
+            </div>
+            <div class="settings-badge">April 2024</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="focus-block">
+        <div class="section-title">
+          <span class="squircle sq-cyan"><i class="fas fa-award"></i></span> Verified Certificates
+        </div>
+        <div class="settings-list">
+          <a href="https://archive.nptel.ac.in/content/noc/NOC25/SEM1/Ecertificates/106/noc25-cs65/Course/NPTEL25CS65S64750120004445570.pdf" target="_blank" class="settings-item">
+            <div class="settings-item-left">
+              <span class="squircle sq-blue"><i class="fas fa-certificate"></i></span>
+              <div>
+                <div class="settings-item-title">Social Networks</div>
+                <div class="settings-item-desc">NPTEL IIT | April 2025</div>
+              </div>
+            </div>
+            <div class="settings-item-right">
+              <span>View</span> <i class="fas fa-chevron-right"></i>
+            </div>
+          </a>
+          <a href="https://github.com/prathishdevendran/Portfolio/blob/main/Unlocking%20DSA%20with%20C.jpg" target="_blank" class="settings-item">
+            <div class="settings-item-left">
+              <span class="squircle sq-purple"><i class="fas fa-certificate"></i></span>
+              <div>
+                <div class="settings-item-title">Unlocking DSA with C</div>
+                <div class="settings-item-desc">CSE Pathshala | March 2024</div>
+              </div>
+            </div>
+            <div class="settings-item-right">
+              <span>View</span> <i class="fas fa-chevron-right"></i>
+            </div>
+          </a>
+          <a href="https://www.freecodecamp.org/certification/fcc5c9cffb8-1190-4a54-a6aa-40f7a3cee440/responsive-web-design" target="_blank" class="settings-item">
+            <div class="settings-item-left">
+              <span class="squircle sq-green"><i class="fas fa-certificate"></i></span>
+              <div>
+                <div class="settings-item-title">Responsive Web Design</div>
+                <div class="settings-item-desc">FreeCodeCamp | Nov 2023</div>
+              </div>
+            </div>
+            <div class="settings-item-right">
+              <span>View</span> <i class="fas fa-chevron-right"></i>
+            </div>
+          </a>
+          <a href="https://www.udemy.com/certificate/UC-0f213fbf-dea9-4f6c-9235-3e6fd2099d9c/" target="_blank" class="settings-item">
+            <div class="settings-item-left">
+              <span class="squircle sq-yellow"><i class="fas fa-certificate"></i></span>
+              <div>
+                <div class="settings-item-title">ChatGPT Made Easy: AI Essentials</div>
+                <div class="settings-item-desc">Udemy | Aug 2025</div>
+              </div>
+            </div>
+            <div class="settings-item-right">
+              <span>View</span> <i class="fas fa-chevron-right"></i>
+            </div>
+          </a>
+          <a href="https://www.mindluster.com/student/certificate/12696255170" target="_blank" class="settings-item">
+            <div class="settings-item-left">
+              <span class="squircle sq-cyan"><i class="fas fa-certificate"></i></span>
+              <div>
+                <div class="settings-item-title">Job Interviews Essentials</div>
+                <div class="settings-item-desc">Mindluster | Oct 2023</div>
+              </div>
+            </div>
+            <div class="settings-item-right">
+              <span>View</span> <i class="fas fa-chevron-right"></i>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact">
+      <div class="focus-block">
+        <div class="section-title">
+          <span class="squircle sq-red"><i class="fas fa-envelope"></i></span> Get In Touch
+        </div>
+        <form id="oneuiContactForm">
+          <div class="oneui-form-group">
+            <input type="text" id="contactName" class="oneui-input" placeholder="Your Name" required>
+          </div>
+          <div class="oneui-form-group">
+            <input type="email" id="contactEmail" class="oneui-input" placeholder="Your Email" required>
+          </div>
+          <div class="oneui-form-group">
+            <textarea id="contactMessage" class="oneui-input" placeholder="Your Message" required></textarea>
+          </div>
+          <div style="text-align: right; margin-top: 18px;">
+            <button type="submit" class="oneui-btn">
+              <i class="fas fa-paper-plane"></i> Send Message
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Quick Connections settings list style -->
+      <div class="focus-block">
+        <div class="section-title">
+          <span class="squircle sq-blue"><i class="fas fa-share-nodes"></i></span> Connections
+        </div>
+        <div class="oneui-social-grid">
+          <a href="https://linkedin.com/in/prathish-d-997065284/" target="_blank" class="social-card">
+            <span class="squircle sq-blue" style="width: 48px; height: 48px;"><i class="fab fa-linkedin"></i></span>
+            <span>LinkedIn</span>
+          </a>
+          <a href="https://github.com/prathishdevendran/" target="_blank" class="social-card">
+            <span class="squircle sq-cyan" style="width: 48px; height: 48px;"><i class="fab fa-github"></i></span>
+            <span>GitHub</span>
+          </a>
+          <a href="mailto:prathishdevendran@gmail.com" class="social-card">
+            <span class="squircle sq-red" style="width: 48px; height: 48px;"><i class="fas fa-envelope"></i></span>
+            <span>Email</span>
+          </a>
+          <a href="tel:+916280784963" class="social-card">
+            <span class="squircle sq-green" style="width: 48px; height: 48px;"><i class="fas fa-phone"></i></span>
+            <span>Phone</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="oneui-footer">
+      <p>&copy; 2026 D PRATHISH. Designed mimicking Samsung One UI 8.5.</p>
+    </footer>
+
+  </main>
+
+  <!-- Bottom Capsule Reachability Navigation Dock -->
+  <nav class="oneui-nav-dock">
+    <a href="#home" class="dock-item active" data-sec="home">
+      <i class="fas fa-home"></i>
+      <span>Home</span>
+    </a>
+    <a href="#skills" class="dock-item" data-sec="skills">
+      <i class="fas fa-code"></i>
+      <span>Skills</span>
+    </a>
+    <a href="#projects" class="dock-item" data-sec="projects">
+      <i class="fas fa-folder"></i>
+      <span>Projects</span>
+    </a>
+    <a href="#education" class="dock-item" data-sec="education">
+      <i class="fas fa-graduation-cap"></i>
+      <span>Education</span>
+    </a>
+    <a href="#achievements" class="dock-item" data-sec="achievements">
+      <i class="fas fa-trophy"></i>
+      <span>Awards</span>
+    </a>
+    <a href="#contact" class="dock-item" data-sec="contact">
+      <i class="fas fa-envelope"></i>
+      <span>Contact</span>
+    </a>
+  </nav>
+
+  <!-- Javascript Core Logic -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // 1. Theme Configuration
+      const themeToggle = document.getElementById('themeToggleCheckbox');
+      
+      const initTheme = () => {
+        const isDarkMode = localStorage.getItem('darkMode') === 'true';
+        themeToggle.checked = isDarkMode;
+        if (isDarkMode) {
+          document.body.classList.add('dark-mode');
+        } else {
+          document.body.classList.remove('dark-mode');
+        }
+      };
+      
+      const toggleTheme = () => {
+        const setDark = themeToggle.checked;
+        localStorage.setItem('darkMode', setDark);
+        if (setDark) {
+          document.body.classList.add('dark-mode');
+        } else {
+          document.body.classList.remove('dark-mode');
+        }
+      };
+      
+      initTheme();
+      themeToggle.addEventListener('change', toggleTheme);
+
+      // 2. Collapsing Header & Sticky Top Bar Logic
+      const stickyBar = document.getElementById('stickyBar');
+      const oneuiHeader = document.getElementById('oneuiHeader');
+      
+      window.addEventListener('scroll', () => {
+        const scrollPos = window.scrollY;
+        if (scrollPos > 60) {
+          document.body.classList.add('scrolled');
+        } else {
+          document.body.classList.remove('scrolled');
+        }
+      });
+
+      // 3. ScrollSpy & Floating Dock Active State Linker
+      const sections = document.querySelectorAll('section');
+      const dockItems = document.querySelectorAll('.dock-item');
+
+      const onScroll = () => {
+        let scrollPos = window.scrollY || document.documentElement.scrollTop;
+        // Offset scroll position slightly for better visual triggers
+        const offset = 140; 
+        
+        sections.forEach(sec => {
+          if (scrollPos >= sec.offsetTop - offset && scrollPos < sec.offsetTop + sec.offsetHeight - offset) {
+            const currentId = sec.getAttribute('id');
+            dockItems.forEach(item => {
+              item.classList.remove('active');
+              if (item.getAttribute('data-sec') === currentId) {
+                item.classList.add('active');
+              }
+            });
+          }
+        });
+      };
+      
+      window.addEventListener('scroll', onScroll);
+
+      // 4. Contact Form Submission Feedback Handler
+      const contactForm = document.getElementById('oneuiContactForm');
+      contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const name = document.getElementById('contactName').value;
+        alert(`Thanks, ${name}! Your message has been sent successfully. (Demo feedback mimicking One UI toast notification)`);
+        contactForm.reset();
+      });
+    });
+
+
+  </script>
 </body>
 </html>
