@@ -1,2 +1,2 @@
 # Portfolio-web
-this is my portfolio
+open my portfolio via https://prathish-portfolio.netlify.app/
